@@ -1,38 +1,16 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Fibonacci {
-    public double evenFibonacciSum (double limit){
-        double a = 1;
-        double b = 2;
-        double sum = 0;
-        while (sum+b<limit){
-            double c = a;
-            if (b%2 == 0){
-                sum+=b;
+    public int evenFibonacciSum(int limit) {
+        int num1 = 1;
+        int num2 = 2;
+        int sum = 0;
+        while (num2 < limit) {
+            int a = num1;
+            if (num2 % 2 == 0) {
+                sum += num2;
             }
-            a = b;
-            b += c;
+            num1 = num2;
+            num2 += a;
         }
         return sum;
-    }
-
-    public static void printSum (){
-        double a = 1;
-        double b = 2;
-        double sum = 0;
-        ArrayList<Double> fib = new ArrayList();
-        while (sum<4000000){
-            double c = a;
-            if (b%2 == 0){
-                sum+=b;
-                fib.add(b);
-            }
-            a = b;
-
-            b += c;
-        }
-        System.out.println(Arrays.toString(fib.toArray()));
-        System.out.println(sum);
     }
 }
